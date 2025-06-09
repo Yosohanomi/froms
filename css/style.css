@@ -13,14 +13,14 @@
 }
 
 .modal__container {
+    z-index: 12;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: (-50%, -50%);
-    width: 300px;
-    height: 300px;
     background-color: white;
     border: 1px solid black;
+    padding: 20px;
 }
 
 .modal__backdrop.active {
