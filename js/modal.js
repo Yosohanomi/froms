@@ -12,15 +12,16 @@ function toggleModal() {
     // або add, але тоді не закриється, бо тогл додає якщо нема, видаляє якщо клас є
 }
 
-modalForm.addEventListener('submit', (event) => {
-    event.preventDefault()
-    console.dir(event.currentTarget.elements.value);
-})
+// modalForm.addEventListener('submit', (event) => {
+//     event.preventDefault()
+//     console.dir(event.currentTarget.elements.value);
+// })
 
-modalInput.addEventListener('focus', ()=> {
-    console.log('focus made');
-})
+// modalInput.addEventListener('focus', ()=> {
+//     console.log('focus made');
+// })
 
-modalInput.addEventListener('blur', ()=> {
-    console.log('blur made');
-})
+// modalInput.addEventListener('blur', ()=> {
+//     console.log('blur made');
+// })
+
