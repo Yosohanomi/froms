@@ -3,13 +3,35 @@ const backdrop = document.querySelector('#backdrop')
 const closeBtn = document.querySelector('#close-modal-btn')
 const modalForm = document.querySelector('.modal__form')
 const modalInput= document.querySelector('js-input')
-btn.addEventListener('click', toggleModal)
-closeBtn.addEventListener('click', toggleModal)
+btn.addEventListener('click', onOpenModal)
+closeBtn.addEventListener('click', onCloseModal)
 
-function toggleModal() {
-    backdrop.classList.toggle('active')
+function onEscapePress(event) {
+    console.log(event.code);
+    // object values and codes
+    if(event.code === 'Escape') {
+        onCloseModal()
+    }
+}
+
+backdrop.addEventListener('click', onBackdropClick)
+
+function onBackdropClick(event) {
+    if (event.turget === event.currentTarget) {
+        onCloseModal()
+    }
+}
+
+function onOpenModal() {
+    window.addEventListener('keydown', onEscapePress)
+    backdrop.classList.add('active')
 
     // або add, але тоді не закриється, бо тогл додає якщо нема, видаляє якщо клас є
+}
+
+function onCloseModal() {
+    window.removeEventListener('keydown', onEscapePress)
+    backdrop.classList.remove('active')
 }
 
 // modalForm.addEventListener('submit', (event) => {
